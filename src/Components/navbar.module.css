@@ -456,6 +456,7 @@
   --yellow-5: #fdcb5c;
   --desktop-nav-search-box-large-width: 268px;
   --desktop-nav-search-box-width: 215px;
+  --webkit-filter: drop-shadow(0 0 5px rgba(var(--web-always-black), .0975));
 }
 .nav {
   position: relative;
@@ -463,7 +464,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 60px;
+  height: var(--desktop-nav-height);;
   justify-content: center;
   align-items: stretch;
 }
@@ -483,7 +484,6 @@
   max-width: 975px;
   width: 100%;
   padding: 0 20px;
-  /* margin-right: 17px; */
 }
 .textLogo {
   flex: 1 0 127px;
@@ -598,4 +598,63 @@
 .profileIcon img{
   height: 24px;
   border-radius: 50%;
+}
+.dropedMenu{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  margin-top: var(--base-unit);
+  margin-top: 120px;
+  width: 123px;
+  border-radius: 6px;
+  background: rgb(var(--ig-banner-background));
+  /* border: 1px solid red; */
+  filter: drop-shadow(0 0 5px rgba(var(--web-always-black), 0.0975));  
+}
+.dropedMenu a{
+  text-decoration: none;
+  font-weight: var(--font-weight-system-regular);
+  color: rgb(var(--ig-primary-text));
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--system-14-font-size);
+  line-height: var(--system-14-line-height);
+  font-family: var(--font-family-system);
+  height: 37px;
+  
+}
+.dropedMenu a:first-child{
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  margin-top: 3px;
+}
+.dropedMenu a:not(:first-child){
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.dropedMenu a:visited{
+  color: rgb(var(--ig-link));
+}
+.dropedItem{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: calc(var(--base-unit) * 2);
+  padding-top: calc(var(--base-unit) * 2);
+  padding-left: calc(var(--base-unit) * 4);
+  padding-right: calc(var(--base-unit) * 4);
+  
+}
+.dropedItem:hover{
+  background-color: rgb(var(--ig-secondary-background));
+}
+.dropedItem p{
+  margin-left: 12px;
+  
+  color: rgb(var(--ig-primary-text));
 }
