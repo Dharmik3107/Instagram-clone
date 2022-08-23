@@ -1,0 +1,52 @@
+@import './navbar.module.css';
+*{
+    box-sizing: border-box;
+}
+@keyframes PostIndicator-Slidein {
+    from{
+        transform: translateY(-100%);
+        opacity:0;
+    }
+    to {
+        transform: translateY(0%);
+        opacity:1;
+    }
+
+}
+.postIndicator{
+    width: 100vw;
+    position: absolute;
+    margin-top: calc(var(--base-unit) * 2);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: stretch;
+    color: rgb(var(--ig-primary-text));
+    animation: PostIndicator-Slidein 300ms ease-in-out;
+}
+.indicatorButton{
+    height: 36px;
+    -webkit-appearance: none;
+    background: rgb(var(--ig-elevated-background));
+    border: none;
+    border-radius: 22px;
+    box-shadow: 0 10px 45px rgb(0 0 0 / 20%);
+    color: rgb(var(--ig-primary-text));
+    cursor: pointer;
+    font-weight: var(--font-weight-system-semibold);
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-transform: inherit;
+    white-space: nowrap;
+    width: 95px;
+    z-index: 1000;
+    font-family: var(--font-family-system);
+    font-size: var(--system-14-font-size);
+    line-height: var(--system-14-line-height);
+    background: rgb(var(--ig-elevated-background));
+    padding: calc(var(--base-unit) * 2);
+    flex: 0 0 auto;
+}
+
