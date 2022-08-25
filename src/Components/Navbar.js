@@ -4,6 +4,7 @@ import dropdownIcon from "./Images/dropdown-arrow.svg";
 import profile from "./Images/profile-picture.jpg";
 const Navbar = () => {
 const [isActive, setActive] = useState(false)
+const [search, setSearch] = useState(false)
   return (
     <>
       <nav className={styles.nav}>
@@ -93,9 +94,9 @@ const [isActive, setActive] = useState(false)
                 </div>
               </a>
             </div>}
-            <div className={styles.searchBox}>
+            <div className={styles.searchBox} onClick={()=> setSearch(true)}>
               <input className={styles.search} type="text" name="search" />
-              <div className={styles.searchDiv}>
+              {!search && <div className={styles.searchDiv}>
                 <svg
                   aria-label="Search"
                   className={styles.searchBtn}
@@ -125,7 +126,7 @@ const [isActive, setActive] = useState(false)
                   ></line>
                 </svg>
                 <span className={styles.searchPlace}>Search</span>
-              </div>
+              </div>}
             </div>
             <div className={styles.navIcons}>
               <div className={styles.buttonSpreader}>

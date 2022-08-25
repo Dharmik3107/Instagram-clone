@@ -539,6 +539,7 @@
   border-radius: 8px;
   /* border: 1px solid red; */
   width: 100%;
+  text-indent: 1rem;
 }
 .searchDiv {
   display: flex;
