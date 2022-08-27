@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, {useState } from "react";
 import styles from "./navbar.module.css";
 import dropdownIcon from "./Images/dropdown-arrow.svg";
 import profile from "./Images/profile-picture.jpg";
 const Navbar = () => {
-const [isActive, setActive] = useState(false)
-const [search, setSearch] = useState(false)
+  const [isActive, setActive] = useState(false);
+  const [search, setSearch] = useState(false);
+  const [value, setValue] = useState("");
   return (
     <>
       <nav className={styles.nav}>
@@ -30,103 +31,150 @@ const [search, setSearch] = useState(false)
                   ></path>
                 </svg>
               </a>
-              <button className={styles.dropDown} onClick={()=>{
-                setActive(!isActive)
-              }} >
+              <button
+                className={styles.dropDown}
+                onClick={()=>setActive(!isActive)}
+              >
                 <img src={dropdownIcon} alt="dropdown-button" />
               </button>
             </div>
-            {isActive && <div className={styles.dropedMenu}>
-              <a href="/">
-                <div className={styles.dropedItem}>
-                  <svg
-                    aria-label="Following"
-                    class={styles.dropedlogo1}
-                    color="#262626"
-                    fill="#262626"
-                    height="16"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    width="16"
-                  >
-                    <path
-                      d="M19.006 8.252a3.5 3.5 0 11-3.499-3.5 3.5 3.5 0 013.5 3.5z"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-miterlimit="10"
-                      stroke-width="2"
-                    ></path>
-                    <path
-                      d="M22 19.5v-.447a4.05 4.05 0 00-4.05-4.049h-4.906a4.05 4.05 0 00-4.049 4.049v.447"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                    ></path>
-                    <polyline
-                      fill="none"
-                      points="8.003 9.198 4.102 13.099 2.003 11"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                    ></polyline>
-                  </svg>
-                  <p className={styles.dropedText}>Following</p>
-                </div>
-              </a>
-              <a href="/">
-                <div className={styles.dropedItem}>
-                  <svg
-                    aria-label="Favorites"
-                    class={styles.dropedlogo2}
-                    color="#262626"
-                    fill="#262626"
-                    height="16"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    width="16"
-                  >
-                    <path d="M18.18 22.51a.99.99 0 01-.513-.142L12 18.975l-5.667 3.393a1 1 0 01-1.492-1.062l1.37-6.544-4.876-4.347a.999.999 0 01.536-1.737l6.554-.855 2.668-5.755a1 1 0 011.814 0l2.668 5.755 6.554.855a.999.999 0 01.536 1.737l-4.876 4.347 1.37 6.544a1 1 0 01-.978 1.205zM12 16.81a1 1 0 01.514.142l4.22 2.528-1.021-4.873a.998.998 0 01.313-.952l3.676-3.276-4.932-.644a1 1 0 01-.778-.57L12 4.867l-1.992 4.297a1 1 0 01-.779.57l-4.931.644 3.676 3.276a.998.998 0 01.313.951l-1.02 4.873 4.22-2.527A1 1 0 0112 16.81z"></path>
-                  </svg>
-                  <p className={styles.dropedText}>Favorites</p>
-                </div>
-              </a>
-            </div>}
-            <div className={styles.searchBox} onClick={()=> setSearch(true)}>
-              <input className={styles.search} type="text" name="search" />
-              {!search && <div className={styles.searchDiv}>
-                <svg
-                  aria-label="Search"
-                  className={styles.searchBtn}
-                  height="16"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="16"
+            {isActive && (
+              <div className={styles.dropedMenu}>
+                <a href="/">
+                  <div className={styles.dropedItem}>
+                    <svg
+                      aria-label="Following"
+                      class={styles.dropedlogo1}
+                      color="#262626"
+                      fill="#262626"
+                      height="16"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="16"
+                    >
+                      <path
+                        d="M19.006 8.252a3.5 3.5 0 11-3.499-3.5 3.5 3.5 0 013.5 3.5z"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-miterlimit="10"
+                        stroke-width="2"
+                      ></path>
+                      <path
+                        d="M22 19.5v-.447a4.05 4.05 0 00-4.05-4.049h-4.906a4.05 4.05 0 00-4.049 4.049v.447"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      ></path>
+                      <polyline
+                        fill="none"
+                        points="8.003 9.198 4.102 13.099 2.003 11"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      ></polyline>
+                    </svg>
+                    <p className={styles.dropedText}>Following</p>
+                  </div>
+                </a>
+                <a href="/">
+                  <div className={styles.dropedItem}>
+                    <svg
+                      aria-label="Favorites"
+                      class={styles.dropedlogo2}
+                      color="#262626"
+                      fill="#262626"
+                      height="16"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="16"
+                    >
+                      <path d="M18.18 22.51a.99.99 0 01-.513-.142L12 18.975l-5.667 3.393a1 1 0 01-1.492-1.062l1.37-6.544-4.876-4.347a.999.999 0 01.536-1.737l6.554-.855 2.668-5.755a1 1 0 011.814 0l2.668 5.755 6.554.855a.999.999 0 01.536 1.737l-4.876 4.347 1.37 6.544a1 1 0 01-.978 1.205zM12 16.81a1 1 0 01.514.142l4.22 2.528-1.021-4.873a.998.998 0 01.313-.952l3.676-3.276-4.932-.644a1 1 0 01-.778-.57L12 4.867l-1.992 4.297a1 1 0 01-.779.57l-4.931.644 3.676 3.276a.998.998 0 01.313.951l-1.02 4.873 4.22-2.527A1 1 0 0112 16.81z"></path>
+                    </svg>
+                    <p className={styles.dropedText}>Favorites</p>
+                  </div>
+                </a>
+              </div>
+            )}
+            <div className={styles.searchBox}>
+              <input
+                className={styles.search}
+                type="text"
+                name="search"
+                placeholder={search ? "Search" : ""}
+                value={value}
+                onChange={(event) => setValue(event.target.value)}
+              />
+              {search && (
+                <button
+                  onClick={() => {
+                    setSearch(false);
+                    setValue("");
+                  }}
+                  className={styles.closeSearch}
                 >
-                  <path
-                    d="M19 10.5A8.5 8.5 0 1110.5 2a8.5 8.5 0 018.5 8.5z"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                  ></path>
-                  <line
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    x1="16.511"
-                    x2="22"
-                    y1="16.511"
-                    y2="22"
-                  ></line>
-                </svg>
-                <span className={styles.searchPlace}>Search</span>
-              </div>}
+                  <svg
+                    className={styles.closeSVG}
+                    version="1.1"
+                    id="Layer_1"
+                    x="0px"
+                    y="0px"
+                    width="122.881px"
+                    height="122.88px"
+                    viewBox="0 0 122.881 122.88"
+                    enable-background="new 0 0 122.881 122.88"
+                  >
+                    <g>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M61.44,0c33.933,0,61.441,27.507,61.441,61.439 c0,33.933-27.508,61.44-61.441,61.44C27.508,122.88,0,95.372,0,61.439C0,27.507,27.508,0,61.44,0L61.44,0z M81.719,36.226 c1.363-1.363,3.572-1.363,4.936,0c1.363,1.363,1.363,3.573,0,4.936L66.375,61.439l20.279,20.278c1.363,1.363,1.363,3.573,0,4.937 c-1.363,1.362-3.572,1.362-4.936,0L61.44,66.376L41.162,86.654c-1.362,1.362-3.573,1.362-4.936,0c-1.363-1.363-1.363-3.573,0-4.937 l20.278-20.278L36.226,41.162c-1.363-1.363-1.363-3.573,0-4.936c1.363-1.363,3.573-1.363,4.936,0L61.44,56.504L81.719,36.226 L81.719,36.226z"
+                      />
+                    </g>
+                  </svg>
+                </button>
+              )}
+              {!search && (
+                <div className={styles.searchDiv}>
+                  <svg
+                    onClick={() => setSearch(true)}
+                    aria-label="Search"
+                    className={styles.searchBtn}
+                    height="16"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="16"
+                  >
+                    <path
+                      d="M19 10.5A8.5 8.5 0 1110.5 2a8.5 8.5 0 018.5 8.5z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    ></path>
+                    <line
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      x1="16.511"
+                      x2="22"
+                      y1="16.511"
+                      y2="22"
+                    ></line>
+                  </svg>
+                  <span
+                    onClick={() => setSearch(true)}
+                    className={styles.searchPlace}
+                  >
+                    Search
+                  </span>
+                </div>
+              )}
             </div>
             <div className={styles.navIcons}>
               <div className={styles.buttonSpreader}>

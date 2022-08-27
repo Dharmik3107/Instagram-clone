@@ -541,6 +541,32 @@
   width: 100%;
   text-indent: 1rem;
 }
+.search::placeholder{
+  font-family: var(--font-family-system);
+  font-size: var(--system-16-font-size);
+  color: rgb(var(--ig-secondary-text));
+  line-height: var(--system-14-line-height);
+  font-weight: var(--font-weight-system-light);
+}
+.closeSearch{
+  align-self: center;
+  justify-self: flex-end;
+  /* width: 100%; */
+  order: 1;
+  height: 14px;
+  width: 14px;
+  outline: none;
+  border: none;
+  margin-right: 15px;
+}
+.closeSVG{
+  align-items: center;
+  height: 14px;
+  width: 14px;
+  
+  border-radius: 50%;
+  filter: invert(0.8);
+}
 .searchDiv {
   display: flex;
   justify-content: flex-start;
