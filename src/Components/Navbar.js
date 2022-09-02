@@ -1,14 +1,14 @@
-import React, {useState } from "react";
+import React from "react";
 import styles from "./navbar.module.css";
-import dropdownIcon from "./Images/dropdown-arrow.svg";
-import profile from "./Images/profile-picture.jpg";
+import dropdownIcon from "../Assets/dropdown-arrow.svg";
+import profile from "../Assets/profile-picture.jpg";
 import { useSelector, useDispatch} from "react-redux";
-import { dropDown,searchBar } from "../store/Actions/action";
+import { dropDown,searchBar,searchValue } from "../store/Actions/action";
 const Navbar = () => {
-  const isActive = useSelector(state=>state.navbar);
-  const search = useSelector(state=>state.navbar);
+  const isActive = useSelector(state=>state.navbar.isActive);
+  const search = useSelector(state=>state.navbar.search);
+  const value = useSelector(state=>state.navbar.searchValue);
   const dispatch = useDispatch();
-  const [value, setValue] = useState("");
   return (
     <>
       <nav className={styles.nav}>
@@ -41,7 +41,7 @@ const Navbar = () => {
                 <img src={dropdownIcon} alt="dropdown-button" />
               </button>
             </div>
-            {isActive && (
+            { isActive && (
               <div className={styles.dropedMenu}>
                 <a href="/">
                   <div className={styles.dropedItem}>
@@ -108,13 +108,13 @@ const Navbar = () => {
                 name="search"
                 placeholder={search ? "Search" : ""}
                 value={value}
-                onChange={(event) => setValue(event.target.value)}
+                onChange={(event) => dispatch(searchValue(event.target.value))}
               />
               {search && (
                 <button
                   onClick={() => {
                     dispatch(searchBar(false));
-                    setValue("");
+                    dispatch(searchValue(""));
                   }}
                   className={styles.closeSearch}
                 >

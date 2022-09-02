@@ -1,18 +1,21 @@
-export const dropDown = (booleanValue) => {
+export const dropDown = () => {
     return{
         type:'drop-down',
-        payload:booleanValue
     }
 }
-export const searchBar = (booleanValue) => {
+export const searchBar = () => {
     return {
         type:'search',
-        payload:booleanValue
     }
 }
-export const newPost = (booleanValue) => {
+export const searchValue = (value) => {
+    return {
+        type:'search-value',
+        payload:value
+    }
+}
+export const newPost = () => {
     return {
         type:'new-post',
-        payload:booleanValue
     }
 }

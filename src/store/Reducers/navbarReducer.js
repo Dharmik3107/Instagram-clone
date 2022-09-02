@@ -1,18 +1,26 @@
 const initialState = {
-    dropDown:false,
-    searchBar:false,
-    newPost:false
+    isActive:false,
+    search:false,
+    searchValue:'',
+    newpost:false
 }
 const navbarReducer = (state=initialState,action) =>{
     switch(action.type){
         case 'drop-down': return {
-            dropDown:action.payload
+            ...state,
+            isActive:!state.isActive
         }
         case 'search': return {
-            searchBar:action.payload
+            ...state,
+            search:!state.search
+        }
+        case 'search-value':return {
+            ...state,
+            searchValue:action.payload
         }
         case 'new-post': return {
-            newPost : action.payload
+            ...state,
+            newpost : !state.newpost
         }
         default: return state;
     }
