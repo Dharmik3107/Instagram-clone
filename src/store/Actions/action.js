@@ -19,3 +19,8 @@ export const newPost = () => {
         type:'new-post',
     }
 }
+export const addPost = () => {
+    return {
+        type: 'add-post'
+    }
+}

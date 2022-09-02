@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./body.module.css";
+import { useSelector, useDispatch} from "react-redux";
+import { newPost } from "../store/Actions/action";
 
 const NewPostIndicator = () => {
-  const [isNewPost, setNewPost] = useState(false);
+  const isNewPost = useSelector(state=>state.navbar.newpost);
+  const dispatch = useDispatch();
   return (
     <>
       {isNewPost && (
         <div className={styles.postIndicator}>
           <button
             className={styles.indicatorButton}
-            onClick={() => setNewPost(false)}
+            onClick={() => dispatch(newPost(false))}
           >
             New Posts
           </button>

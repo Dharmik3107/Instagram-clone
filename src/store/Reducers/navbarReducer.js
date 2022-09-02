@@ -2,7 +2,8 @@ const initialState = {
     isActive:false,
     search:false,
     searchValue:'',
-    newpost:false
+    newpost:false,
+    addpost:false
 }
 const navbarReducer = (state=initialState,action) =>{
     switch(action.type){
@@ -21,6 +22,10 @@ const navbarReducer = (state=initialState,action) =>{
         case 'new-post': return {
             ...state,
             newpost : !state.newpost
+        }
+        case 'add-post' : return{
+            ...state,
+            addpost : !state.addpost
         }
         default: return state;
     }
