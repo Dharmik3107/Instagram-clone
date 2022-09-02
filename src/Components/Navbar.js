@@ -2,9 +2,12 @@ import React, {useState } from "react";
 import styles from "./navbar.module.css";
 import dropdownIcon from "./Images/dropdown-arrow.svg";
 import profile from "./Images/profile-picture.jpg";
+import { useSelector, useDispatch} from "react-redux";
+import { dropDown,searchBar } from "../store/Actions/action";
 const Navbar = () => {
-  const [isActive, setActive] = useState(false);
-  const [search, setSearch] = useState(false);
+  const isActive = useSelector(state=>state.navbar);
+  const search = useSelector(state=>state.navbar);
+  const dispatch = useDispatch();
   const [value, setValue] = useState("");
   return (
     <>
@@ -33,7 +36,7 @@ const Navbar = () => {
               </a>
               <button
                 className={styles.dropDown}
-                onClick={()=>setActive(!isActive)}
+                onClick={()=>dispatch(dropDown(!isActive))}
               >
                 <img src={dropdownIcon} alt="dropdown-button" />
               </button>
@@ -110,7 +113,7 @@ const Navbar = () => {
               {search && (
                 <button
                   onClick={() => {
-                    setSearch(false);
+                    dispatch(searchBar(false));
                     setValue("");
                   }}
                   className={styles.closeSearch}
@@ -139,7 +142,7 @@ const Navbar = () => {
               {!search && (
                 <div className={styles.searchDiv}>
                   <svg
-                    onClick={() => setSearch(true)}
+                    onClick={() => dispatch(searchBar(true))}
                     aria-label="Search"
                     className={styles.searchBtn}
                     height="16"
@@ -168,7 +171,7 @@ const Navbar = () => {
                     ></line>
                   </svg>
                   <span
-                    onClick={() => setSearch(true)}
+                    onClick={() => dispatch(searchBar(true))}
                     className={styles.searchPlace}
                   >
                     Search
