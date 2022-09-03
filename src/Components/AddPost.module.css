@@ -1,0 +1,102 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.closeButton{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    padding: 8px;
+}
+.closeButton:hover{
+    cursor: pointer;
+}
+.backgroundLighter{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color: var(--overlay-alpha-80);
+}
+.addPostContainer{
+    position: absolute;
+    top: 88px;
+    left: 50%;
+    transform: translate(-50%,0);
+    border-radius: var(--modal-border-radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(var(--ig-elevated-background));
+    width: 718px;
+    height: 761px;
+    max-width: 855px;
+    min-width: 348px;
+    min-height: 391px;
+    max-height: 898px;
+}
+.containerTitle{
+    border-bottom: 1px solid rgb(var(--ig-elevated-separator));
+    height: 45px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.addPostTitle{
+    font-size: var(--system-16-font-size);
+    font-weight: var(--font-weight-system-semibold);
+    line-height: var(--system-16-line-height);
+}
+.formContainer{
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    align-content: stretch;
+}
+.addPostInput{
+    height: calc( 100vmin - var(--creation-padding-y) - var(--creation-header-height) - var(--creation-padding-x) );
+    max-height: min( calc( 100vw - var(--creation-min-padding-x) - var(--creation-settings-width) ), calc(var(--creation-modal-max-height) - var(--creation-header-height)) );
+    max-width: min( calc( 100vw - var(--creation-min-padding-x) - var(--creation-settings-width) ), calc(var(--creation-modal-max-height) - var(--creation-header-height)) );
+    min-height: calc( var(--creation-modal-min-height) - var(--creation-header-height) );
+    min-width: calc( var(--creation-modal-min-height) - var(--creation-header-height) );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 4px;
+}
+.addPostDesc{
+    font-size: var(--system-22-font-size);
+    font-weight: var(--font-weight-system-light);
+    color: rgb(var(--ig-primary-text));
+    font-family: var(--font-family-system);
+    margin-top: calc((var(--base-unit) * 2.5));
+    
+}
+.fileInput{
+    /* color: rgb(var(--ig-elevated-background)); */
+    display: none;
+    border: 1px solid black;
+    margin-top: calc(var(--base-unit) * 6);
+    overflow: hidden;   
+}
+.buttonFile{
+    margin-top: calc(var(--base-unit) * 5.2);
+    border-radius: 4px;
+    color: rgb(var(--web-always-white));
+    background-color: rgb(var(--ig-primary-button));
+    border: 1px solid transparent;
+    padding: 5px 9px!important;
+    font-family: var(--font-family-system);
+    font-size: 14px;
+    line-height: var(--system-14-line-height);
+    font-weight: var(--font-weight-system-semibold);
+}
+

@@ -1,5 +1,5 @@
 import styles from "./App.module.css";
-import {Navbar, StoryCard, NewPostIndicator } from "./lib/library";
+import {Navbar, StoryCard, NewPostIndicator,AddPost } from "./lib/library";
 
 
 function App() {
@@ -8,11 +8,13 @@ function App() {
       <Navbar></Navbar>
       <section className={styles.bodyGrid}>
         <NewPostIndicator/>
+        <AddPost/>
         <div className={styles.storyPostCol}>
           <StoryCard/>
         </div>
         <div className={styles.profileSuggestedCol}></div>
       </section>
+      <div className={styles.scrollBar}></div>
     </>
   );
 }
