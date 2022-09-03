@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './body.module.css'
+import styles from '../Styles/body.module.css'
 
 const StoryCard = () => {
   return (
