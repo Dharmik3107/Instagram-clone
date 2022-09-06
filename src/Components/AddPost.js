@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "../Styles/AddPost.module.css";
-import { useSelector, useDispatch } from "react-redux";
+import {useDispatch } from "react-redux";
 import { addPost } from "../store/Actions/action";
 const AddPost = () => {
-  const addPostState = useSelector((state) => state.navbar.addpost);
+  
   const dispatch = useDispatch();
   return (
-    addPostState && (
-      <>
+    (
+      <div className={styles.addPostCenter}>
         <div className={styles.backgroundLighter}></div>
         <div className={styles.closeButton} onClick={() => dispatch(addPost())}>
           <svg
@@ -60,12 +60,13 @@ const AddPost = () => {
               <h2 className={styles.addPostDesc}>
                 Drag photos and videos here
               </h2>
-              <form encType="multipart/form-data" className={styles.inputForm}>
+              <form encType="multipart/form-data" className={styles.inputForm} onSubmit={(event)=>event.preventDefault()}>
                 <button
                   id="file"
                   className={styles.buttonFile}
                   onClick={() => {
                     document.getElementById("files").click();
+                    
                   }}
                 >
                   Select from computer
@@ -81,7 +82,7 @@ const AddPost = () => {
             </div>
           </div>
         </div>
-      </>
+      </div>
     )
   );
 };

@@ -465,6 +465,7 @@
   flex-direction: column;
   width: 100%;
   height: var(--desktop-nav-height);
+  flex-basis: var(--desktop-nav-height);
   justify-content: center;
   align-items: stretch;
 }
@@ -491,6 +492,7 @@
   display: flex;
   flex-shrink: 0;
   align-items: center;
+  height: var(--desktop-nav-height);
 }
 .textIcon {
   height: 29px;
@@ -522,6 +524,9 @@
   border-radius: 8px;
   flex: 0 1 auto;
   background: rgb(var(--ig-highlight-background));
+}
+.searchBox:hover{
+  cursor: text;
 }
 .search {
   -webkit-appearance: none;
@@ -558,6 +563,9 @@
   outline: none;
   border: none;
   margin-right: 15px;
+}
+.closeSearch:hover {
+  cursor: pointer;
 }
 .closeSVG {
   align-items: center;
@@ -642,7 +650,6 @@
   width: 123px;
   border-radius: 6px;
   background: rgb(var(--ig-banner-background));
-  /* border: 1px solid red; */
   filter: drop-shadow(0 0 5px rgba(var(--web-always-black), 0.0975));
 }
 .dropedMenu a {
@@ -684,6 +691,5 @@
 }
 .dropedItem p {
   margin-left: 12px;
-
   color: rgb(var(--ig-primary-text));
 }

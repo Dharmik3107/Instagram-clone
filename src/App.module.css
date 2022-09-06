@@ -1,9 +1,46 @@
+@import './Styles/navbar.module.css';
+:root{
+  --feed-sidebar-padding: 32px;
+  --feed-sidebar-width: 319px;
+}
 *{
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
+}
+body{
+  background-color: rgb(var(--ig-secondary-background));
 }
 .scrollBar{
   height: 150vh;
+}
+.bodyGrid{
+  display: flex;
+  flex-flow: row nowrap;
+  max-width: calc( 470px + var(--feed-sidebar-padding) + var(--feed-sidebar-width));
+  width: 100%;
+  height: 100vh;
+  align-items: stretch;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: stretch;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.storyPostCol{
+  max-width: 470px;
+  width: 100%;
+  background: rgb(var(--ig-primary-background));
+  border: 1px solid rgb(var(--ig-elevated-separator));
+  border-radius: 8px;
+  padding: 16px 0;
+  height: 117px;
+  margin-top: 26px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.profileSuggestedCol{
+  width: var(--feed-sidebar-width);
+  margin-left: var(--feed-sidebar-padding);
 }
 

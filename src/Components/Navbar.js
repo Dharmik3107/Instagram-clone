@@ -3,13 +3,18 @@ import styles from "../Styles/navbar.module.css";
 import dropdownIcon from "../Assets/dropdown-arrow.svg";
 import profile from "../Assets/profile-picture.jpg";
 import { useSelector, useDispatch } from "react-redux";
-import { dropDown, searchBar, searchValue, addPost } from "../store/Actions/action";
+import {
+  dropDown,
+  searchBar,
+  searchValue,
+  addPost,
+} from "../store/Actions/action";
 const Navbar = () => {
   const isActive = useSelector((state) => state.navbar.isActive);
   const search = useSelector((state) => state.navbar.search);
   const value = useSelector((state) => state.navbar.searchValue);
   const addPostState = useSelector((state) => state.navbar.addpost);
-  console.log(addPostState)
+  console.log(addPostState);
   const dispatch = useDispatch();
   return (
     <>
@@ -225,8 +230,11 @@ const Navbar = () => {
                     ></path>
                   </svg>
                 </a>
-                <button className={styles.addbtn} onClick={()=>dispatch(addPost())}>
-                  { !addPostState ? (
+                <button
+                  className={styles.addbtn}
+                  onClick={() => dispatch(addPost())}
+                >
+                  {!addPostState ? (
                     <svg
                       aria-label="New post"
                       className={styles.addbtnsvg}
