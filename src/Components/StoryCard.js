@@ -5,6 +5,7 @@ import Story from "./Story";
 const StoryCard = () => {
   return (
     <div className={styles.storyCenter}>
+      <Story/>
     </div>
   );
 };
